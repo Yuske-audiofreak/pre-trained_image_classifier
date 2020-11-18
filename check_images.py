@@ -23,3 +23,8 @@ print("start time: {}, end time: {}, tot-time: {}".format(start_time, end_time, 
 
 # Prints overall runtime in seconds
 print("\nTotal Elapsed Runtime:", tot_time, "in seconds.")
+
+# Prints overall runtime in format hh:mm:ss
+print("\nTotal Elapsed Runtime:", str(int(tot_time/3600)))+":"+
+        str(int((tot_time % 3600) / 60)) + ":" +
+        str(int((tot_time % 3600) % 60)))
