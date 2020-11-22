@@ -9,29 +9,32 @@
 # The date I started working on this project: 16th of November
 
 # Imports time() and sleep() fucntions from time module
-from time import time, sleep
+# from time import time, sleep
 
 # Sets start time
-start_time = time()
+# start_time = time()
 
 # Replace sleep (75) below with code you want to start_time
-sleep(75)
+#sleep(75)
 
 # Sets end time
-end_time = time()
+#end_time = time()
 
 # Computes overall runtime in seconds
-tot_time = start_time - end_time
+# tot_time = start_time - end_time
 
-print("start time: {}, end time: {}, tot-time: {}".format(start_time, end_time, tot_time))
+#print("start time: {}, end time: {}, tot-time: {}".format(start_time, end_time, tot_time))
 
 # Prints overall runtime in seconds
-print("\nTotal Elapsed Runtime:", tot_time, "in seconds.")
+#print("\nTotal Elapsed Runtime:", tot_time, "in seconds.")
 
 # Prints overall runtime in format hh:mm:ss
-print("\nTotal Elapsed Runtime:", str(int(tot_time/3600)))+":"+
-        str(int((tot_time % 3600) / 60)) + ":" +
-        str(int((tot_time % 3600) % 60)))
+#print("\nTotal Elapsed Runtime:", str(int(tot_time/3600)))+":"+
+#        str(int((tot_time % 3600) / 60)) + ":" +
+#        str(int((tot_time % 3600) % 60)))
+
+# This was my code.
+###########################################################################
 
 
 #
@@ -73,7 +76,7 @@ from print_results import print_results
 # Main program function defined below
 def main():
     # TODO 0: Measures total program runtime by collecting start time
-    start_time =
+    start_time = time()
 
     # TODO 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
