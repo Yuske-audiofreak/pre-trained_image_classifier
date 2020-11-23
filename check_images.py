@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/check_images.py
@@ -152,7 +153,7 @@ def main():
     print_results(results, results_stats, None, True, True)
 
     # TODO 0: Measure total program runtime by collecting end time
-    end_time =
+    end_time = time()
 
     # TODO 0: Computes overall runtime in seconds & prints it in hh:mm:ss format
     tot_time = #calculate difference between end time and start time
