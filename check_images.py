@@ -40,8 +40,8 @@
 
 #
 # TODO 0: Add your information below for Programmer & Date Created.
-# PROGRAMMER:
-# DATE CREATED:
+# PROGRAMMER: Yusuke Aita
+# DATE CREATED: 25th 11 2020 (20201125)
 # REVISED DATE:
 # PURPOSE: Classifies pet images using a pretrained CNN model, compares these
 #          classifications to the true identity of the pets in the images, and
