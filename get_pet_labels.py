@@ -40,6 +40,8 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
+    results_dic = {} # initialize the dictionary of pet labels
+
     # Replace None with the results_dic dictionary that you created with this
     # function
     return None
