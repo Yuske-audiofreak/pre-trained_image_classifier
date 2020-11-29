@@ -42,19 +42,19 @@ def get_pet_labels(image_dir):
     """
 
     # Retrieve the filenmaes from folder pet_images/
-    filename_list = listdir("pet_images/")
+    filename_list = listdir(image_dir) # ("pet_images/")
 
     #Print 10 of the filenames from folder pet_images/
-    for idx in ragne(0, 10, 1):
+    for idx in range(0, 10, 1):
         print("{:2d} file: {:>25}".format(idx + 1, filename_list[idx]))
 
     results_dic = dict() # initialize the dictionary of pet labels
 
-        # Determine number of items in Dictionary
+    # Determine number of items in Dictionary
     items_in_dic = len(results_dic) # should be 0
     print("\nEmpty Dictionary results_dic - n items=", items_in_dic)
 
-    edited_filename_list = []
+    pet_labels = []
 
     for filename in filename_list:
         print("filename=", filename)
@@ -78,23 +78,17 @@ def get_pet_labels(image_dir):
         # Strip off starting/trailing whitespace characters
         pet_name = pet_name.strip()
 
+        # Add the pet_name into pet_labels
+        pet_labels.append(pet_name)
 
-        #commandbox = filename.lower()
-        #print("commandbox=", commandbox)
-        edited_filename_list.append(pet_name)
+    # print("pet_labels =", pet_labels)
 
-        #results_dic[filename] = commandbox
-
-    print("Edited_filename_list =", edited_filename_list)
-
-    # results_dic = dict(zip(filename_list, edited_filename_list))
-
-    print("\nDictionary is ", results_dic)
+    # print("\nDictionary is ", results_dic)
 
     # Adds new key-value pairs to dictionary ONLY shen key doesn't already exist. THis dictionary's value
     # is s List that contains only one item - the pet image label
-    filenames = ["beagle_0239.jpg", "Boston_terrier_02259.jpg"]
-    pet_labels = ["beagle", "boston terrier"]
+    filenames = filename_list
+
     for idx in range(0, len(filenames), 1):
         if filenames[idx] not in results_dic:
             results_dic[filenames[idx]] = [pet_labels[idx]]
@@ -113,31 +107,9 @@ def get_pet_labels(image_dir):
     # Blank space separating each word in a label composed of multiple words
     # Whitespace characters stripped from from & end of label
 
-    # Sets pet_iamge variable to a filenmae
-    pet_image = "Boston_terrier_02259.jpg"
-
-    # Sets string to lower case letters
-    low_pet_image = pet_image.lower()
-
-    # Splits lower case string  by _ to breake into words
-    wowrd_list_pet_image = low_pet_image.split("_")
-
-    # Create pet_name starting as empty string
-    pet_name = ""
-
-    # Loops to check if word in pet name is only
-    # alphabetic characters - if true append word
-    # to pet_name separated by trailing space
-    for word in word_list_pet_image:
-        if word.isalpha():
-            pet_name += word + " "
-
-    # Strip off starting/trailing whitespace characters
-    pet_name = pet_name.strip()
-
     # Prints resulting pet_name
     print("\nFilename=", pet_image, "   Label=", pet_name)
 
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    return results_dic
