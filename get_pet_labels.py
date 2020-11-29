@@ -58,12 +58,32 @@ def get_pet_labels(image_dir):
 
     for filename in filename_list:
         print("filename=", filename)
-        commandbox = ""
-        commandbox = filename.lower()
-        print("commandbox=", commandbox)
-        edited_filename_list.append(commandbox)
 
-        results_dic[filename] = commandbox
+        # Create its petname from the filename
+        pet_image = filename
+        low_pet_image = pet_image.lower()
+        word_list_pet_image = low_pet_image.split("_")
+        print("type is", type(word_list_pet_image))
+
+        # Create pet_name starting as empty string
+        pet_name = ""
+        print("type is", type(pet_name))
+
+        # Loops to check if word in pet_name is only alphabetic characters
+        # if true append word to pet_name separated by trailing space
+        for word in word_list_pet_image:
+            if word.isalpha():
+                pet_name += word + " "
+
+        # Strip off starting/trailing whitespace characters
+        pet_name = pet_name.strip()
+
+
+        #commandbox = filename.lower()
+        #print("commandbox=", commandbox)
+        edited_filename_list.append(pet_name)
+
+        #results_dic[filename] = commandbox
 
     print("Edited_filename_list =", edited_filename_list)
 
