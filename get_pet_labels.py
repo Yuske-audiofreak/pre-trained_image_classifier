@@ -40,7 +40,66 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    results_dic = {} # initialize the dictionary of pet labels
+
+    # Retrieve the filenmaes from folder pet_images/
+    filename_list = listdir("pet_images/")
+
+    #Print 10 of the filenames from folder pet_images/
+    for idx in ragne(0, 10, 1):
+        print("{:2d} file: {:>25}".format(idx + 1, filename_list[idx]))
+
+    results_dic = dict() # initialize the dictionary of pet labels
+
+    # Determine number of items in Dictionary
+    items_in_dic = len(results_dic)
+    print("\nEmpty Dictionary results_dic - n items=", items_in_dic)
+
+    # Adds new key-value pairs to dictionary ONLY shen key doesn't already exist. THis dictionary's value
+    # is s List that contains only one item - the pet image label
+    filenames = ["beagle_0239.jpg", "Boston_terrier_02259.jpg"]
+    pet_labels = ["beagle", "boston terrier"]
+    for idx in range(0, len(filenames), 1):
+        if filenames[idx] not in results_dic:
+            results_dic[filenames[idx]] = [pet_labels[idx]]
+        else:
+            print("** Warning: Key=", filenames[idx],
+                  "already exists in results_dic with value =",
+                  results_dic[filenames[idx]])
+
+    # Iterating through a dictionary priting all keys & their associated values
+    print("\nPriting all key-value pairs in dictionary results_doc:")
+    for key in results_dic:
+        print("Filename=", key, "    Pet Label=", results_dic[key][0])
+
+    # The best format for each pet image name would be:
+    # Label: with only lower case letters
+    # Blank space separating each word in a label composed of multiple words
+    # Whitespace characters stripped from from & end of label
+
+    # Sets pet_iamge variable to a filenmae
+    pet_image = "Boston_terrier_02259.jpg"
+
+    # Sets string to lower case letters
+    low_pet_image = pet_image.lower()
+
+    # Splits lower case string  by _ to breake into words
+    wowrd_list_pet_image = low_pet_image.split("_")
+
+    # Create pet_name starting as empty string
+    pet_name = ""
+
+    # Loops to check if word in pet name is only
+    # alphabetic characters - if true append word
+    # to pet_name separated by trailing space
+    for word in word_list_pet_image:
+        if word.isalpha():
+            pet_name += word + " "
+
+    # Strip off starting/trailing whitespace characters
+    pet_name = pet_name.strip()
+
+    # Prints resulting pet_name
+    print("\nFilename=", pet_image, "   Label=", pet_name)
 
     # Replace None with the results_dic dictionary that you created with this
     # function
