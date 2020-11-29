@@ -50,26 +50,17 @@ def get_pet_labels(image_dir):
 
     results_dic = dict() # initialize the dictionary of pet labels
 
-        # Determine number of items in Dictionary
-    items_in_dic = len(results_dic) # should be 0
+    # Determine number of items in Dictionary
+    items_in_dic = len(results_dic)
     print("\nEmpty Dictionary results_dic - n items=", items_in_dic)
 
-    edited_filename_list = []
-
     for filename in filename_list:
-        print("filename=", filename)
         commandbox = ""
         commandbox = filename.lower()
-        print("commandbox=", commandbox)
-        edited_filename_list.append(commandbox)
-
         results_dic[filename] = commandbox
 
-    print("Edited_filename_list =", edited_filename_list)
-
-    # results_dic = dict(zip(filename_list, edited_filename_list))
-
-    print("\nDictionary is ", results_dic)
+    # check the contents of the dictionary
+    print("\nDictionary is ", dict())
 
     # Adds new key-value pairs to dictionary ONLY shen key doesn't already exist. THis dictionary's value
     # is s List that contains only one item - the pet image label
