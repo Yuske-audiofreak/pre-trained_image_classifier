@@ -86,6 +86,9 @@ def main():
     # the variable in_arg
     in_arg = get_input_args()
 
+    # Accesses values of Argument 1 by printint it
+    print("Argument 1:", in_args.dir)
+
     # Function that checks command line arguments using in_arg
     check_command_line_arguments(in_arg)
 
