@@ -11,3 +11,4 @@ This is just for training my skills. If you're taking the same course as me,
 it might be a good example.
 
 ## Liscence
+Udacity
