@@ -10,5 +10,10 @@ There is _no_ specific installation file. Just copy them if you want.
 This is just for training my skills. If you're taking the same course as me,
 it might be a good example.
 
+## Files
+- check_images.py
+- get_input_args.py
+- get_pet_labels.py
+
 ## Liscence
 Udacity
