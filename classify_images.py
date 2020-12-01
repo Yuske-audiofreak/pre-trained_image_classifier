@@ -65,7 +65,8 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    test1 = images_dir
+    classifier_labels = []
+    path_dir = images_dir
     dic = results_dic
 
     None
