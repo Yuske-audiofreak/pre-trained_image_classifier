@@ -31,10 +31,14 @@ from classifier import classifier
 #
 def classify_images(images_dir, results_dic, model):
     """
-    Creates classifier labels with classifier function, compares pet labels to
-    the classifier labels, and adds the classifier label and the comparison of
-    the labels to the results dictionary using the extend function. Be sure to
+    Creates classifier labels with classifier function,
+    compares pet labels to the classifier labels,
+    and adds the classifier label and the comparison of
+    the labels to the results dictionary using the extend function.
+
+    Be sure to
     format the classifier labels so that they will match your pet image labels.
+
     The format will include putting the classifier labels in all lower case
     letters and strip the leading and trailing whitespace characters from them.
     For example, the Classifier function returns = 'Maltese dog, Maltese terrier, Maltese'
@@ -45,6 +49,7 @@ def classify_images(images_dir, results_dic, model):
     a 'dalmatian'(pet label) and it will match to the classifier label
     'dalmatian, coach dog, carriage dog' if the classifier function correctly
     classified the pet images of dalmatians.
+
      PLEASE NOTE: This function uses the classifier() function defined in
      classifier.py within this function. The proper use of this function is
      in test_classifier.py Please refer to this program prior to using the
@@ -66,7 +71,11 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.
     """
     classifier_labels = []
-    path_dir = images_dir
-    dic = results_dic
+
+    # Test to call the contents of the dictionary
+    print("results in classifty_images.py :\ ", results_dic)
+
+    #path_dir = images_dir
+    #dic = results_dic
 
     None
