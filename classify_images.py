@@ -70,7 +70,14 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    classifier_labels = []
+
+    image_path_list = []
+
+    test_image = "pet_images/Collie_03797.jpg"
+    image_path = []
+
+
+    classifier(image_path)
 
     # Test to call the contents of the dictionary
     print("results in classifty_images.py :\ ", results_dic)
