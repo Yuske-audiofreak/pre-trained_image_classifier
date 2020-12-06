@@ -80,7 +80,10 @@ def classify_images(images_dir, results_dic, model):
 
 
     for k in results_dic:
-        image_path = images_dir + k
+        print("Key =", k)
+        key_str = str(k)
+        image_path = images_dir + key_str
+        print("image_path =", image_path)
         image_classification = classifier(image_path, chosen_model)
 
         # test classifier function
@@ -89,7 +92,10 @@ def classify_images(images_dir, results_dic, model):
         #results
 
     # Test to call the contents of the dictionary
-    print("results in classifty_images.py :\ ", results_dic)
+    # print("results in classifty_images.py :\ ", results_dic)
+
+    #path_dir = images_dir
+    #dic = results_dic
 
     #path_dir = images_dir
     #dic = results_dic
