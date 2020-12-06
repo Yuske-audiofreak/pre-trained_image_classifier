@@ -78,13 +78,17 @@ def classify_images(images_dir, results_dic, model):
 
     chosen_model = model
 
-
+    # Key For Loop
     for k in results_dic:
         print("Key =", k)
         key_str = str(k)
         image_path = images_dir + key_str
         print("image_path =", image_path)
         image_classification = classifier(image_path, chosen_model)
+
+        # Extend the list in the value by adding its path with "append"
+        results_dic[k].append(image_path)
+        print("results_dic[k] = ",results_dic[k])
 
         # test classifier function
         print(image_classification)
