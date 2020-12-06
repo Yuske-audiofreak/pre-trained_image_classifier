@@ -76,8 +76,12 @@ def classify_images(images_dir, results_dic, model):
     test_image = "pet_images/Collie_03797.jpg"
     image_path = []
 
+    chosen_model = model
 
-    classifier(image_path)
+
+    for k in results_dic:
+        image_path = images_dir + k
+        image_classification = classifier(image_path, chosen_model)
 
     # Test to call the contents of the dictionary
     print("results in classifty_images.py :\ ", results_dic)
