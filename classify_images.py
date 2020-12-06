@@ -83,10 +83,15 @@ def classify_images(images_dir, results_dic, model):
         image_path = images_dir + k
         image_classification = classifier(image_path, chosen_model)
 
+        # test classifier function
+        print(image_classification)
+
+        #results
+
     # Test to call the contents of the dictionary
     print("results in classifty_images.py :\ ", results_dic)
 
     #path_dir = images_dir
     #dic = results_dic
 
-    None
+    # None
