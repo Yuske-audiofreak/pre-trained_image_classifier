@@ -108,10 +108,22 @@ def classify_images(images_dir, results_dic, model):
         # to extract dictionary.items[0]
         # search_pet_label = results_dic[k]
 
-        if search_pet_label in low_classified_label:
-            results_dic[k].append(1)
+        # the value of results_dic is substituted for name_comp_value
+        name_comp_value = results_dic[k]
+        print("name_comp_value: ", name_comp_value)
+        name_comp_list = list(name_comp_value)
+        #for i in range(0, len(name_comp_list), 1):
+        #    print("name_comp_list is no{}, content = {}".format(i,\
+ #                                                               #name_comp_list[i]))
+        full_pet_name_comp_list = name_comp_list[0]
+        print("full_pet_name_comp_list is ", full_pet_name_comp_list)
+        # split_full_name_comp_list = full_name_comp_list.strip("'/")
+        full_label_name_comp_list = name_comp_list[1]
+        print("full_label_name_comp_list is",full_label_name_comp_list)
+        if full_pet_name_comp_list in full_label_name_comp_list:
+            print("OK")
         else:
-            results_dic[k].append(0)
+            print("NG")
 
         print("(judge) results_dic[k] = ", results_dic[k])
 
