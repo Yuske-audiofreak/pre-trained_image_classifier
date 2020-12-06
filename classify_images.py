@@ -94,12 +94,26 @@ def classify_images(images_dir, results_dic, model):
         # test classifier function
         print("image_classification output:", image_classification)
 
+        # to extract dictionary.items[0]. Here there is only one value in the dictionary
+        search_pet_label = results_dic[k]
+
+
         # Edit the name of the image_classification
         classified_label = image_classification
         low_classified_label = classified_label.lower()
 
         results_dic[k].append(low_classified_label)
         print("results_dic[k] = ", results_dic[k])
+
+        # to extract dictionary.items[0]
+        # search_pet_label = results_dic[k]
+
+        if search_pet_label in low_classified_label:
+            results_dic[k].append(1)
+        else:
+            results_dic[k].append(0)
+
+        print("(judge) results_dic[k] = ", results_dic[k])
 
         #word_list_low_classified_label = low_classified_label.split(",")
 
