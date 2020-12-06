@@ -43,6 +43,7 @@ def classify_images(images_dir, results_dic, model):
     letters and strip the leading and trailing whitespace characters from them.
     For example, the Classifier function returns = 'Maltese dog, Maltese terrier, Maltese'
     so the classifier label = 'maltese dog, maltese terrier, maltese'.
+
     Recall that dog names from the classifier function can be a string of dog
     names separated by commas when a particular breed of dog has multiple dog
     names associated with that breed. For example, you will find pet images of
@@ -87,11 +88,45 @@ def classify_images(images_dir, results_dic, model):
         image_classification = classifier(image_path, chosen_model)
 
         # Extend the list in the value by adding its path with "append"
-        results_dic[k].append(image_path)
-        print("results_dic[k] = ",results_dic[k])
+        # results_dic[k].append(image_path)
+        # print("results_dic[k] = ", results_dic[k])
 
         # test classifier function
-        print(image_classification)
+        print("image_classification output:", image_classification)
+
+        # Edit the name of the image_classification
+        classified_label = image_classification
+        low_classified_label = classified_label.lower()
+
+        results_dic[k].append(low_classified_label)
+        print("results_dic[k] = ", results_dic[k])
+
+        #word_list_low_classified_label = low_classified_label.split(",")
+
+                # Create its petname from the filename
+                #pet_image = filename
+                #low_pet_image = pet_image.lower()
+                #word_list_pet_image = low_pet_image.split("_")
+                #print("type of word_list_pet_image is", type(word_list_pet_image))
+
+                # Create pet_name starting as empty string
+                #pet_name = ""
+                #print("type of pet_name is", type(pet_name))
+
+                # Loops to check if word in pet_name is only alphabetic characters
+                # if true append word to pet_name separated by trailing space
+                #for word in word_list_pet_image:
+                #    if word.isalpha():
+                #        pet_name += word + " "
+
+                # Strip off starting/trailing whitespace characters
+                #pet_name = pet_name.strip()
+
+                # Add the pet_name into pet_labels
+                #pet_labels.append(pet_name)
+
+        # Reset image_path
+        image_path = []
 
         #results
 
