@@ -19,5 +19,5 @@ it might be a good example.
 Udacity
 
 ## Reference
-To solve a problem which I tried to extract value with index in the dictionary.value()
+To solve a problem which I tried to extract value with index in the dictionary.value()  
 https://stackoverflow.com/questions/17431638/get-typeerror-dict-values-object-does-not-support-indexing-when-using-python
