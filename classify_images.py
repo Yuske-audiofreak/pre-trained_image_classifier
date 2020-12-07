@@ -122,8 +122,10 @@ def classify_images(images_dir, results_dic, model):
         print("full_label_name_comp_list is",full_label_name_comp_list)
         if full_pet_name_comp_list in full_label_name_comp_list:
             print("OK")
+            results_dic[k].append(1)
         else:
             print("NG")
+            results_dic[k].append(0)
 
         print("(judge) results_dic[k] = ", results_dic[k])
 
