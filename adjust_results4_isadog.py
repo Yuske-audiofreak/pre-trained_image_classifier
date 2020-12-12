@@ -68,18 +68,22 @@ def adjust_results4_isadog(results_dic, dogfile):
            None - results_dic is mutable data type so no return needed.
     """
     # Initialize a dictionary named dogname_dic
-    dogname_dic = {}
+    dogname_dic = dict()
 
-    f = open('dognames.txt', 'r')
-    dog_data = f.read()
+    with open(dogfile, "r") as infile:
+        # Reads in dognames from first line in file
+        line = infile.readline()
+
+        # Processes each line in file until reaching EOF (end-of-file) by
+        # processing line and adding dognames to dognames_dic with while loop
+        while line != "":
+
+            for word in f:
+                line = f.readline().rstrip('\n')
+                dog_dic[line] = 1
+
     f.close()
-
-    print("\dognames =", dog_data)
-
-    with open('dognames.txt') as f:
-        lines = f.readlines()
-        for line in lines:
-            dogname_dic[line] = 1
+        
 
     print("\ 'dognames.txt' =", dogname_dic)
 
