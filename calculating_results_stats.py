@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/calculates_results_stats.py
 #
-# PROGRAMMER:
-# DATE CREATED:
+# PROGRAMMER:Yusuke Aita
+# DATE CREATED:20201220
 # REVISED DATE:
 # PURPOSE: Create a function calculates_results_stats that calculates the
 #          statistics of the results of the programrun using the classifier's model
@@ -70,4 +70,41 @@ def calculates_results_stats(results_dic):
     """
     # Replace None with the results_stats_dic dictionary that you created with
     # this function
+
+    # create a dictionary
+    results_stats_dic = dict()
+
+    # initialize all variables
+    n_images = 0            # number of images
+    n_dogs_img = 0          # number of dog images
+    n_notdogs_img = 0       # number of NON-dog images
+    n_match = 0             # number of matches between pet & classifier labels
+    n_correct_dogs = 0      # number of correctly classified dog images
+    n_correct_notdogs = 0   # number of correctly classified NON-dog images
+    n_correct_breed = 0     # number of correctly classified dog breeds
+    pct_match = 0           # percentage of correct matches
+    pct_correct_dogs = 0    # percentage of correctly classified dogs
+    pct_correct_breed = 0   # percentage of correctly classified dog breeds
+    pct_correct_notdogs = 0 # percentage of correctly classified NON-dogs
+
+    # number of images
+    n_images = len(results_dic)
+    print("")
+    print("n_images = ", n_images)
+    #            n_dogs_img - number of dog images
+    #            n_notdogs_img - number of NON-dog images
+    #            n_match - number of matches between pet & classifier labels
+    #            n_correct_dogs - number of correctly classified dog images
+    #            n_correct_notdogs - number of correctly classified NON-dog images
+    #            n_correct_breed - number of correctly classified dog breeds
+    #            pct_match - percentage of correct matches
+    #            pct_correct_dogs - percentage of correctly classified dogs
+    #            pct_correct_breed - percentage of correctly classified dog breeds
+    #            pct_correct_notdogs - percentage of correctly classified NON-dogs
+
+
+
+
+
+
     return None
