@@ -77,8 +77,8 @@ def calculates_results_stats(results_dic):
     # initialize all variables
     results_stats_dic['n_images'] = 0   # number of images
     results_stats_dic['n_dogs_img'] = 0  # number of dog images
+    results_stats_dic['n_notdogs_img'] = 0  # number of NON-dog images
     results_stats_dic['n_match'] = 0     # number of matches between pet & classifier labels
-    results_stats_dic['n_notdogs_img'] = 0  # number of number of NON-dog images
     results_stats_dic['n_correct_dogs'] = 0     # number of correctly classified dog images
     results_stats_dic['n_correct_notdogs'] = 0  # number of correctly classified NON-dog images
     results_stats_dic['n_correct_breed'] = 0   # number of correctly classified dog breeds
