@@ -1,5 +1,6 @@
 pet_images
 additional_images
+classified_results
 test_classifier.py
 Classifying_Images.docx
 Dictionary with multiple values per key.docx
