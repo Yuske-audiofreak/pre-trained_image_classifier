@@ -65,11 +65,11 @@ def get_pet_labels(image_dir):
         pet_image = filename
         low_pet_image = pet_image.lower()
         word_list_pet_image = low_pet_image.split("_")
-        print("type of word_list_pet_image is", type(word_list_pet_image))
+        # print("type of word_list_pet_image is", type(word_list_pet_image))
 
         # Create pet_name starting as empty string
         pet_name = ""
-        print("type of pet_name is", type(pet_name))
+        # print("type of pet_name is", type(pet_name))
 
         # Loops to check if word in pet_name is only alphabetic characters
         # if true append word to pet_name separated by trailing space
