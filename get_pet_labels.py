@@ -54,12 +54,13 @@ def get_pet_labels(image_dir):
 
     # Determine number of items in Dictionary
     items_in_dic = len(results_dic) # should be 0
-    print("\nEmpty Dictionary results_dic - n items=", items_in_dic)
+    # print("\nEmpty Dictionary results_dic - n items=", items_in_dic)
 
     pet_labels = []
 
     for filename in filename_list:
-        print("filename=", filename)
+        # To check this loop
+        # print("filename=", filename)
 
         # Create its petname from the filename
         pet_image = filename
@@ -100,9 +101,11 @@ def get_pet_labels(image_dir):
                   results_dic[filenames[idx]])
 
     # Iterating through a dictionary priting all keys & their associated values
-    print("\nPriting all key-value pairs in dictionary results_doc:")
-    for key in results_dic:
-        print("Filename=", key, "    Pet Label=", results_dic[key][0])
+    #print("\nPriting all key-value pairs in dictionary results_doc:")
+
+    # To check the contents of results_dic
+    #for key in results_dic:
+    #    print("Filename=", key, "    Pet Label=", results_dic[key][0])
 
     # The best format for each pet image name would be:
     # Label: with only lower case letters
@@ -110,7 +113,7 @@ def get_pet_labels(image_dir):
     # Whitespace characters stripped from from & end of label
 
     # Prints resulting pet_name
-    print("\nFilename=", pet_image, "   Label=", pet_name)
+    # print("\nFilename=", pet_image, "   Label=", pet_name)
 
     # Replace None with the results_dic dictionary that you created with this
     # function
