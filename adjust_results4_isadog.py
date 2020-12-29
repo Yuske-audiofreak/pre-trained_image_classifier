@@ -78,9 +78,48 @@ def adjust_results4_isadog(results_dic, dogfile):
         # processing line and adding dognames to dognames_dic with while loop
         while line != "":
 
-            for word in infile:
-                line = infile.readline().rstrip('\n')
-                dognames_dic[line] = 1
+            #for word in infile:
+            #    line = infile.readline().rstrip('\n')
+            #    dognames_dic[line] = 1
+
+            rs_n_line = line.rstrip('\n')
+
+            if rs_n_line in dognames_dic:
+                continue
+            else:
+                dognames_dic[rs_n_line] = 1
+
+            line = infile.readline()
+
+            ###########################################################
+            # This method place each alphabet of the word into the dictionary
+            # for word in rs_n_line:
+            #    if word in dognames_dic:
+            #        continue
+            #    else:
+            #        dognames_dic[word] = 1
+            ##################################################################
+
+            #########################################################
+            # This method doesn't make the dog list for the Classifier.
+            # It functions nice for the pet image name, though.
+            # rs_n_line = line.rstrip('\n')
+
+            # print("rs_n_line =", rs_n_line)
+
+            # split_rs_n_line = rs_n_line.split(',')
+            # for i in range(len(split_rs_n_line)):
+            #    print("word in rs_n_line {} = {}".format(i, split_rs_n_line[i] ))
+            #    if split_rs_n_line[i] in dognames_dic:
+            #        continue
+            #    else:
+            #        dognames_dic[split_rs_n_line[i]] = 1
+
+            # line = infile.readline()
+
+            ########################################################
+
+
 
     infile.close()
 
@@ -104,6 +143,9 @@ def adjust_results4_isadog(results_dic, dogfile):
         # Pet Image Label IS of Dog (e.g. found in dognames_dic)
         if results_dic[key][0] in dognames_dic:
 
+            # results_dic[key][3] = 1
+            # Because pet image = dog
+
             # Classifier Label IS image of Dog (e.g. found in dognames_dic)
             # appends (1, 1) because both labels are dogs
             if results_dic[key][1] in dognames_dic:
@@ -122,6 +164,11 @@ def adjust_results4_isadog(results_dic, dogfile):
 
         # Pet Image Label IS NOT a Dog image (e.g. NOT found in dognames_dic)
         else:
+
+            # pet image is NOT a dog
+            # results_dic[key][3] = 0
+            # because pet image is not a dog
+
             # TODO: 4d. REPLACE pass BELOW with CODE that adds the following to
             #           results_dic dictionary for the key indicated by the
             #           variable key - append (0,1) to the value uisng
