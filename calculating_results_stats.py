@@ -90,8 +90,10 @@ def calculates_results_stats(results_dic):
 
     # number of images
     results_stats_dic['n_images'] = len(results_dic)
-    print("")
-    print("n_images = ", results_stats_dic['n_images'])
+
+    # Check command for Image number
+    # print("")
+    # print("n_images = ", results_stats_dic['n_images'])
 
     # number of dog images
     for key in results_dic:
@@ -124,16 +126,16 @@ def calculates_results_stats(results_dic):
 
     results_stats_dic['n_notdogs_img'] = results_stats_dic['n_images'] - results_stats_dic['n_dogs_img']
 
+    # Check results_stats_dic
+    # print("")
+    # print("n_dog_images =", results_stats_dic['n_dogs_img'])
+    # print("n_notdog_img =", results_stats_dic['n_notdogs_img'])
+    # print("n_notdog_img2 =", results_stats_dic['n_notdogs_img2'])
 
-    print("")
-    print("n_dog_images =", results_stats_dic['n_dogs_img'])
-    print("n_notdog_img =", results_stats_dic['n_notdogs_img'])
-    print("n_notdog_img2 =", results_stats_dic['n_notdogs_img2'])
-
-    print('n_match =', results_stats_dic['n_match'])
-    print('n_correct_dogs =', results_stats_dic['n_correct_dogs'])
-    print('n_correct_notdogs=', results_stats_dic['n_correct_notdogs'])
-    print('n_correct_breed=', results_stats_dic['n_correct_breed'])
+    # print('n_match =', results_stats_dic['n_match'])
+    # print('n_correct_dogs =', results_stats_dic['n_correct_dogs'])
+    # print('n_correct_notdogs=', results_stats_dic['n_correct_notdogs'])
+    # print('n_correct_breed=', results_stats_dic['n_correct_breed'])
 
     if results_stats_dic['n_images'] > 0:
         results_stats_dic['pct_match'] = (results_stats_dic['n_match']/results_stats_dic['n_images']) * 100.0
