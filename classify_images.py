@@ -4,7 +4,7 @@
 #
 # PROGRAMMER: Yusuke Aita
 # DATE CREATED: 20201201 (1st Dec. 2020)
-# REVISED DATE:
+# REVISED DATE: 20201229
 # PURPOSE: Create a function classify_images that uses the classifier function
 #          to create the classifier labels and then compares the classifier
 #          labels to the pet image labels. This function inputs:
@@ -74,17 +74,20 @@ def classify_images(images_dir, results_dic, model):
 
     image_path_list = []
 
-    test_image = "pet_images/Collie_03797.jpg"
+    # test image
+    # test_image = "pet_images/Collie_03797.jpg"
     image_path = []
 
     chosen_model = model
 
     # Key For Loop
     for k in results_dic:
-        print("Key =", k)
+        # print("Key =", k)
         key_str = str(k)
+
         image_path = images_dir + key_str
-        print("image_path =", image_path)
+        # print("image_path =", image_path)
+
         image_classification = classifier(image_path, chosen_model)
 
         # Extend the list in the value by adding its path with "append"
@@ -92,7 +95,7 @@ def classify_images(images_dir, results_dic, model):
         # print("results_dic[k] = ", results_dic[k])
 
         # test classifier function
-        print("image_classification output:", image_classification)
+        # print("image_classification output:", image_classification)
 
         # to extract dictionary.items[0]. Here there is only one value in the dictionary
         search_pet_label = results_dic[k]
@@ -103,31 +106,34 @@ def classify_images(images_dir, results_dic, model):
         low_classified_label = classified_label.lower()
 
         results_dic[k].append(low_classified_label)
-        print("results_dic[k] = ", results_dic[k])
+        # print("results_dic[k] = ", results_dic[k])
 
         # to extract dictionary.items[0]
         # search_pet_label = results_dic[k]
 
         # the value of results_dic is substituted for name_comp_value
         name_comp_value = results_dic[k]
-        print("name_comp_value: ", name_comp_value)
+        # print("name_comp_value: ", name_comp_value)
+
         name_comp_list = list(name_comp_value)
         #for i in range(0, len(name_comp_list), 1):
         #    print("name_comp_list is no{}, content = {}".format(i,\
  #                                                               #name_comp_list[i]))
         full_pet_name_comp_list = name_comp_list[0]
-        print("full_pet_name_comp_list is ", full_pet_name_comp_list)
+        # print("full_pet_name_comp_list is ", full_pet_name_comp_list)
+
         # split_full_name_comp_list = full_name_comp_list.strip("'/")
         full_label_name_comp_list = name_comp_list[1]
-        print("full_label_name_comp_list is",full_label_name_comp_list)
+        # print("full_label_name_comp_list is",full_label_name_comp_list)
+
         if full_pet_name_comp_list in full_label_name_comp_list:
-            print("OK")
+            # print("OK")
             results_dic[k].append(1)
         else:
-            print("NG")
+            # print("NG")
             results_dic[k].append(0)
 
-        print("(judge) results_dic[k] = ", results_dic[k])
+        # print("(judge) results_dic[k] = ", results_dic[k])
 
         #word_list_low_classified_label = low_classified_label.split(",")
 
@@ -167,4 +173,4 @@ def classify_images(images_dir, results_dic, model):
     #path_dir = images_dir
     #dic = results_dic
 
-    # None
+    None
