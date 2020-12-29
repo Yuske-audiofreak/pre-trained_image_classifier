@@ -78,6 +78,7 @@ def calculates_results_stats(results_dic):
     results_stats_dic['n_images'] = 0   # number of images
     results_stats_dic['n_dogs_img'] = 0  # number of dog images
     results_stats_dic['n_notdogs_img'] = 0  # number of NON-dog images
+    results_stats_dic['n_notdogs_img2'] = 0 # test for the number of NON=dog images
     results_stats_dic['n_match'] = 0     # number of matches between pet & classifier labels
     results_stats_dic['n_correct_dogs'] = 0     # number of correctly classified dog images
     results_stats_dic['n_correct_notdogs'] = 0  # number of correctly classified NON-dog images
@@ -100,14 +101,25 @@ def calculates_results_stats(results_dic):
             if results_dic[key][4] == 1:
                 results_stats_dic['n_correct_dogs'] += 1
 
+            if results_dic[key][2] == 1:
+                results_stats_dic['n_correct_breed'] += 1
+
+
         if results_dic[key][2] == 1:
             results_stats_dic['n_match'] += 1
 
-            if results_dic[key][3] == 1:
-                results_stats_dic['n_correct_breed'] += 1
+            # if results_dic[key][3] == 1:
+            #    results_stats_dic['n_correct_breed'] += 1
 
-        if results_dic[key][3] == 0 and results_dic[key][4] == 0:
-            results_stats_dic['n_correct_notdogs'] += 1
+        # if results_dic[key][3] == 0 and results_dic[key][4] == 0:
+        #     results_stats_dic['n_correct_notdogs'] += 1
+
+        if results_dic[key][3] == 0:
+            results_stats_dic['n_notdogs_img2'] += 1
+
+            if results_dic[key][4] == 0:
+                results_stats_dic['n_correct_notdogs'] += 1
+
 
 
     results_stats_dic['n_notdogs_img'] = results_stats_dic['n_images'] - results_stats_dic['n_dogs_img']
@@ -115,6 +127,9 @@ def calculates_results_stats(results_dic):
 
     print("")
     print("n_dog_images =", results_stats_dic['n_dogs_img'])
+    print("n_notdog_img =", results_stats_dic['n_notdogs_img'])
+    print("n_notdog_img2 =", results_stats_dic['n_notdogs_img2'])
+
     print('n_match =', results_stats_dic['n_match'])
     print('n_correct_dogs =', results_stats_dic['n_correct_dogs'])
     print('n_correct_notdogs=', results_stats_dic['n_correct_notdogs'])
