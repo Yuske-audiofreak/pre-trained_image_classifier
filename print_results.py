@@ -69,11 +69,11 @@ def print_results(results_dic, results_stats_dic, model,
     print("Number of images =", results_stats_dic['n_images'], " ")
     print("Number of dog images =", results_stats_dic['n_dogs_img'], " ")
     print("Number of NON-dog images =", results_stats_dic['n_notdogs_img'], " ")
-    print("Number of matches between pet & classifier labels =", results_stats_dic['n_match'], " ")
     print("\n")
     print("\nNumber of correctly classified dog images =", results_stats_dic['n_correct_dogs'], " ")
-    print("Number of correctly classified NON-dog images = ", results_stats_dic['n_correct_notdogs'], " ")
     print("Number of correctly classified dog breeds =", results_stats_dic['n_correct_breed'], "  ")
+    print("Number of correctly classified NON-dog images = ", results_stats_dic['n_correct_notdogs'], " ")
+    print("Number of matches between pet & classifier labels =", results_stats_dic['n_match'], " ")
     print("\n")
     print("Percentage of correctly classified dogs", results_stats_dic['pct_correct_dogs'], "  ")
     print("Percentage of correctly classified breeds", results_stats_dic['pct_correct_breed'], "  ")
@@ -102,3 +102,6 @@ def print_results(results_dic, results_stats_dic, model,
                     print("Misclassified breed is =", key, " ")
     else:
         None
+
+
+    None
